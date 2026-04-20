@@ -1,0 +1,397 @@
+body{
+
+margin:0;
+font-family:sans-serif;
+
+background:url("background.jpg") no-repeat center center fixed;
+background-size:cover;
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+}
+
+
+/* CENTER GAME CONTENT */
+
+#gameContainer{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+}
+
+
+/* FLOATING LIGHTS */
+
+.lights span{
+
+position:absolute;
+
+width:12px;
+height:12px;
+
+background:#00ffcc;
+
+border-radius:50%;
+
+animation:float 6s linear infinite;
+
+opacity:.6;
+
+}
+
+@keyframes float{
+
+0%{ transform:translateY(100vh); }
+
+100%{ transform:translateY(-10vh); }
+
+}
+
+
+/* START SCREEN */
+
+#startScreen{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.85);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+z-index:1000;
+
+color:white;
+
+}
+
+
+/* START TITLE */
+
+.startTitle{
+
+font-family:'Cinzel Decorative';
+
+font-size:70px;
+
+letter-spacing:4px;
+
+text-shadow:
+
+0px 0px 15px #00ffcc,
+0px 0px 40px #00ffaa,
+0px 0px 90px #00ffaa;
+
+}
+
+
+/* BEAUTIFUL START BUTTON */
+
+.startBtn{
+
+margin-top:40px;
+
+padding:18px 60px;
+
+font-size:24px;
+
+font-weight:bold;
+
+letter-spacing:2px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+color:white;
+
+background:linear-gradient(45deg,#00ffaa,#00ffcc);
+
+box-shadow:
+
+0px 0px 10px #00ffaa,
+0px 0px 30px #00ffaa,
+inset 0px 0px 15px rgba(255,255,255,0.3);
+
+transition:0.3s;
+
+}
+
+
+/* START BUTTON HOVER */
+
+.startBtn:hover{
+
+transform:scale(1.12);
+
+box-shadow:
+
+0px 0px 20px #00ffaa,
+0px 0px 50px #00ffaa;
+
+}
+
+
+/* START BUTTON CLICK EFFECT */
+
+.startBtn:active{
+
+transform:scale(.95);
+
+}
+
+
+/* GAME TITLE */
+
+.title{
+
+display:none;
+
+font-family:'Cinzel Decorative';
+
+font-size:45px;
+
+color:white;
+
+margin-bottom:5px;
+
+text-shadow:0px 0px 10px black;
+
+}
+
+
+/* MATCH COUNTER */
+
+#matchCounter{
+
+display:none;
+
+color:white;
+
+font-size:22px;
+
+margin-bottom:10px;
+
+text-shadow:0px 0px 6px black;
+
+}
+
+
+/* BOARD */
+
+#gameBoard{
+
+display:none;
+
+display:grid;
+
+grid-template-columns:repeat(4,130px);
+
+gap:18px;
+
+justify-content:center;
+
+}
+
+
+/* CARD */
+
+.card{
+
+width:130px;
+height:150px;
+
+perspective:1000px;
+
+cursor:pointer;
+
+}
+
+
+.inner{
+
+width:100%;
+height:100%;
+
+transition:.7s;
+
+transform-style:preserve-3d;
+
+position:relative;
+
+}
+
+
+.flip{
+
+transform:rotateY(180deg);
+
+}
+
+
+.front,.back{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+border-radius:20px;
+
+backface-visibility:hidden;
+
+}
+
+
+.back{
+
+background:
+
+radial-gradient(circle,#00ffaa 25%,transparent 25%),
+radial-gradient(circle,#00cc99 25%,transparent 25%);
+
+background-size:25px 25px;
+
+background-position:0 0,12px 12px;
+
+}
+
+
+.front{
+
+background:white;
+
+transform:rotateY(180deg);
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+}
+
+
+.front img{
+
+width:80%;
+height:80%;
+
+object-fit:contain;
+
+}
+
+
+.matched{
+
+box-shadow:
+
+0px 0px 15px lime,
+0px 0px 30px lime;
+
+}
+
+
+/* BEAUTIFUL RESTART BUTTON */
+
+.restartBtn{
+
+display:none;
+
+position:fixed;
+
+top:20px;
+left:20px;
+
+padding:12px 28px;
+
+font-size:16px;
+
+font-weight:bold;
+
+border-radius:30px;
+
+border:none;
+
+cursor:pointer;
+
+color:white;
+
+background:linear-gradient(45deg,#ff5f6d,#ffc371);
+
+box-shadow:
+
+0px 0px 10px #ff5f6d,
+0px 0px 20px #ffc371;
+
+transition:.3s;
+
+}
+
+
+.restartBtn:hover{
+
+transform:scale(1.1);
+
+box-shadow:
+
+0px 0px 25px #ff5f6d,
+0px 0px 40px #ffc371;
+
+}
+
+
+/* WIN SCREEN */
+
+#winScreen{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.85);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+}
+
+
+.winBox{
+
+background:white;
+
+padding:40px;
+
+border-radius:20px;
+
+font-size:30px;
+
+text-align:center;
+
+}

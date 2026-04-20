@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Memory Card Game</title>
+
+<link rel="stylesheet" href="memorycard.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<!-- FLOATING LIGHTS -->
+
+<div class="lights">
+
+<span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span>
+
+</div>
+
+
+<!-- START SCREEN -->
+
+<div id="startScreen">
+
+<h1 class="startTitle">MEMORY CARD GAME</h1>
+
+<button class="startBtn" onclick="startGame()">
+
+Start Game
+
+</button>
+
+</div>
+
+
+<!-- RESTART BUTTON -->
+
+<button id="restartBtn" class="restartBtn" onclick="restartGame()">
+
+Restart Game
+
+</button>
+
+
+<!-- GAME CONTAINER -->
+
+<div id="gameContainer">
+
+<h1 class="title">Memory Card Game</h1>
+
+<div id="matchCounter">Matches: 0 / 8</div>
+
+<div id="gameBoard"></div>
+
+</div>
+
+
+<!-- WIN SCREEN -->
+
+<div id="winScreen">
+
+<div class="winBox">
+
+🎉 YOU WON 🎉
+
+<br><br>
+
+<button class="startBtn" onclick="playAgain()">
+
+Play Again
+
+</button>
+
+</div>
+
+</div>
+
+
+<script src="memorycard.js"></script>
+
+</body>
+</html>
